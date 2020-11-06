@@ -1,0 +1,4 @@
+
+Interface: 192.168.29.169 --- 0xe
+  Internet Address      Physical Address      Type
+  192.168.29.1          4c-1b-86-ae-a8-5b     dynamic   

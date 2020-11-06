@@ -7,19 +7,12 @@ host = '127.0.0.1'
 s.bind((host, port))
 s.listen(5)
 
+conn, addr = s.accept()
+filename = 'b.txt'
 
-while True:
-    conn, addr = s.accept()
-    filename = 'a.txt'
-    b = os.path.getsize(filename)
-    f = open(filename, 'rb')
-    l = f.read(b)
+f = open(filename, 'r')
+l = f.read()
+conn.send(l.encode())
 
-    while (l):
-        conn.send(l)
-
-        l = f.read(b)
-    f.close()
-
-    print('Done sending')
-    conn.close()
+print('Done sending')
+conn.close()
