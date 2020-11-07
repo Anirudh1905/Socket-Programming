@@ -19,7 +19,9 @@ def receive():
         rMessage = conn.recv(1024)
         if rMessage.decode()=='bye':
             print ("Ending connection")
+            conn.send('bye'.encode())
             break
+        print(ctime(),rMessage.decode())
         print ("[{0}]: {1}".format(ctime(), rMessage.decode()))
 
 
@@ -35,3 +37,4 @@ t2 = threading.Thread(target=receive, name=4)
 
 t1.start()
 t2.start()
+
