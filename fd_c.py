@@ -10,9 +10,9 @@ s.connect((host,port))
 def receive():
     while True:
         rMessage = s.recv(1024)
-        if rMessage.decode()=='bye':
+        if rMessage.decode()=='Bye':
             print ("Ending connection")
-            s.send('bye'.encode())
+            s.send('Bye'.encode())
             break
         print(ctime(),rMessage.decode())
         print ("[{0}]: {1}".format(ctime(), rMessage.decode()))

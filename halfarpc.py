@@ -4,13 +4,13 @@ s=socket.socket()
 host=socket.gethostname()
 port=9999
 s.connect((host,port))
-print("Give input")
 
-num=int(input())
-if num==1:
-    s.send('date'.encode())
+while True:
+    num=(input())
+    if 'Bye' in num:
+        break
+    s.send(num.encode())
     print(s.recv(1024).decode())
-else:
-    s.send('Bye'.encode())
-
+    f=open('aa.txt','r')
+    print(f.read())
 s.close()

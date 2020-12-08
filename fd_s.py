@@ -13,13 +13,12 @@ conn,addr = s.accept()
 print("Connected by ", addr)
 
 
-
 def receive():
     while True:
         rMessage = conn.recv(1024)
-        if rMessage.decode()=='bye':
+        if rMessage.decode()=='Bye':
             print ("Ending connection")
-            conn.send('bye'.encode())
+            conn.send('Bye'.encode())
             break
         print(ctime(),rMessage.decode())
         print ("[{0}]: {1}".format(ctime(), rMessage.decode()))
