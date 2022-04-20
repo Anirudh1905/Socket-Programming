@@ -1,2 +1,2 @@
 # Socket-Programming
-Contents related to Computer Networks
+Content related to Computer Networks
